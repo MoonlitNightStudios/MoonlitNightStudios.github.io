@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>GettingStarted | QuestSystemPlugin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<header-component></header-component>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Getting started</h1>
+									</header>
+
+									<span class="image main"><img src="/Docs/images/pic11.jpg" alt="" /></span>
+
+									<h2>What is the quest system</h2>
+									<p>
+										The quest system is ...
+									</p>
+
+									<!-- Section -->
+									<section>
+										<header class="major">
+											<h2>Features</h2>
+										</header>
+										<div class="features">
+											<article>
+												<span class="icon solid fa-info"></span>
+												<div class="content">
+													<h3>Intuitive Graph Editor</h3>
+													<p>The quest system plugin comes with an intuitive graph editor similar to the materials editor and the audio editor to seemlessly integrate with the existing list of tools in Unreal Engine.</p>
+												</div>
+											</article>
+											<article>
+												<span class="icon solid fa-wifi"></span>
+												<div class="content">
+													<h3>Replicated</h3>
+													<p>Network Replication is supported out of the box. Just mark your quests as replicated and add the Quest Manager to your game state class for your quests to be replicated! 
+														Property replication works. Send Multicast RPCs from your action blocks on the server to the clients.
+													</p>
+												</div>
+											</article>
+											<article>
+												<span class="icon solid fa-code"></span>
+												<div class="content">
+													<h3>Flexible</h3>
+													<p>The default action blocks are not sufficient for your project? No worries. The system is extensible to allow you to create the blocks you need for your unique project. 
+														Use C++ or Blueprints to create custom blocks for your quests and dialogues.
+													</p>
+												</div>
+											</article>
+										</div>
+									</section>
+
+								<hr class="major" />
+
+									<p>Setting up the plugin for your project is a breeze. Just add the plugin to your project, either by copying the plugin to the Plugins directory
+										of your project or from the Epic Games Launcher, enable the plugin and you are good to go.
+									</p>
+									<!--<p>This following section walks you through the process of setting up the quest system plugin for your project.</p>
+									
+									<hr class="major" />
+
+									<h2>Adding the plugin to your Unreal Engine project</h2>
+									<ol>
+										<li><p>Open Epic Games Launcher</p></li>
+										<li><p></p></li>
+									</ol>
+
+									<hr class="major" />
+
+									<h2>Magna etiam veroeros</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									-->
+
+									<hr class="major" />
+
+									<h2>In project setup</h2>
+									<p>Once the plugin has been activated, do the following steps to setup the plugin for your project.</p>
+									<ul>
+										<li><p><strong>Quest Manager:</strong> If your project is a networked multiplayer game, add the Quest Manager component to your game state class. This component will handle the replication of quests.</p></li>
+										<li><p><strong>Dialogue Component:</strong> Add a Dialogue Component to your Player Controller class. This is required to play the dialogue for a player character.</p></li>
+										<li><p><strong>Dialogue Manager:</strong> Add a Dialogue Manager component to your Game State class. This is required for the dialogue to be played.</p></li>
+									</ul>
+
+									<hr class="major" />
+
+									<h2>The Jargon</h2>
+									<p>The following are a list of words that will be used abundantly in this documentation. This section explains the words in the context of the Quest System.</p>
+									<ul>
+										<li><p><strong>Action:</strong> Anything that gets added to the quest graph is an action. Actions are the basic building blocks of a quest.
+										 Learn more on the <a href="/Docs/QuestSystemPlugin/architecture.html">Architecture</a> section.</p></li>
+										<li><p><strong>ActionSequence:</strong> These are specialised actions that can hold multiple actions as children. Actions inside an action Sequence
+										can call other actions to form a sequence and hence the name. Learn more on the <a href="/Docs/QuestSystemPlugin/architecture.html">Architecture</a> section.</p></li>
+										<li><p><strong>Quest:</strong> This is a specialised action sequence that is recognised as a quest by the Quest System. 
+											This is the class for the assets that will be directly managed by the quest system.</p></li>
+									</ul>
+
+								</section>
+
+						</div>
+					</div>
+
+				<sidebar-component></sidebar-component>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/header.js"></script>
+			<script src="../assets/js/sidebar.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
