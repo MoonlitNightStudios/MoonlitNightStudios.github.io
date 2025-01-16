@@ -8,6 +8,7 @@ class Header extends HTMLElement {
         <!-- Header -->
 				<header id="header">
 					<h1 id="logo"><a href="/index.html">Moonlit Night Studios</a></h1>
+					<h2 align=center> Site is WIP! </h2>
 					<nav id="nav">
 						<ul>
 							<li><a href="/index.html">Home</a></li>
