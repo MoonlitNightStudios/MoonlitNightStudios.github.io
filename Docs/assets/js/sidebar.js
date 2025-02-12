@@ -36,12 +36,12 @@ class Sidebar extends HTMLElement {
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-dialogue.html">Creating dialogues</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/an-intro-to-notebooks.html">An intro to Notebooks</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/an-intro-to-notebooks.html">An intro to Services</a></li>
-														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/an-intro-to-notebooks.html">Creating an advanced quest</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Saving and loading quests</a></li>
 														<li>
 															<span class="opener">Advanced</span>
 															<ul>
 																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Exposing pins to outer graphs</a></li>
-																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-dialogue.html">Creating dialogues</a></li>
+																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Asset instances and Asset references</a></li>
 															</ul>
 														</li>
 														<li><a href="/Docs/QuestSystemPlugin/architecture.html">Uses outside of the quest system</a></li>
@@ -54,7 +54,7 @@ class Sidebar extends HTMLElement {
 														<li><a href="/Docs/QuestSystemPlugin/architecture.html">Writing custom dialogue entities</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/architecture.html">Writing custom dialogue participant types</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/architecture.html">Writing custom dialogue fragments</a></li>
-														<li><a href="/Docs/QuestSystemPlugin/architecture.html">An intro to Notebooks</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Custom dialogue players</a></li>
 													</ul>
 												</li>
 												<li><a href="/Docs/QuestSystemPlugin/api-documentation.html">API documentation</a></li>

@@ -242,6 +242,20 @@
 			$menu_openers.each(function() {
 
 				var $this = $(this);
+				var $ContainedPageLinks = $(this.nextElementSibling.children).find('a');
+				var bWantsToBeOpen = false;
+
+				$ContainedPageLinks.each(function() {
+					if($(this).attr('href') == $window.attr("location").pathname)
+					{
+						bWantsToBeOpen = true;
+					}
+				});
+
+				if(bWantsToBeOpen)
+				{
+					$this.addClass("active");
+				}
 
 				$this.on('click', function(event) {
 
@@ -258,5 +272,32 @@
 				});
 				
 			});
+
+		// Page Links
+		var $page_links = $menu.children().find('a');
+		$page_links.each(function() {
+
+			var $this = $(this);	// the page link
+
+			var $bWantsToBeOpen = $this.attr('href') == $window.attr("location").pathname;
+
+			var el = $this;
+			var ParentNode = el.parentNode;
+			while (el && el.parentNode) {
+				el = el.parentNode;
+				console.log(el);
+				if (el.classList.contains("opener")) {
+					ParentNode=el;
+				  break;
+				}
+			  }
+			  
+			if($bWantsToBeOpen && ParentNode != null)
+			{
+				ParentNode.addClass('active');
+				console.log("Added")
+			}
+			
+		});
 
 })(jQuery);
