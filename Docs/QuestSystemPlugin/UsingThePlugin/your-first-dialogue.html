@@ -23,7 +23,7 @@
 										<h1>Creating Dialogues</h1>
 									</header>
 
-									<span class="image main"><img src="/Docs/images/pic11.jpg" alt="" /></span>
+									<span class="image main"><img width = 100% src="/Docs/images/pic11.jpg" alt="" /></span>
 
 									<h2>Setting up the dialogue system</h2>
 									<p>
@@ -33,16 +33,16 @@
 										<li><p>Create a Game State blueprint derived from <strong>AGameStateBase</strong> and call it <strong>BP_FirstPersonGameState</strong>. Open the blueprint and add a <strong>Manager component</strong>. The game state class must derive from AGameStateBase and not AGameState as the Game Mode class in the first person shooter template derives from AGameModeBase and not AGameMode.
 											The dialogue manager is required to play the dialogue.
 										</p>
-											<span class="image main"><img src="/Docs/images/AddDialogueManager.png" alt="" /></span>
+											<span class="image main"><img width = 100% src="/Docs/images/AddDialogueManager.png" alt="" /></span>
 										</li>
 										<li><p>Open the <Strong>BP_FirstPersonGameMode</Strong> blueprint and set the Game State as <Strong>BP_FirstPersonGameState</Strong>.</p>
-											<span class="image main"><img src="/Docs/images/SetGameStateInGameMode.png" alt="" /></span>
+											<span class="image main"><img width = 100% src="/Docs/images/SetGameStateInGameMode.png" alt="" /></span>
 										</li>
-										<li><p>Open the <strong>BP_FirstPesronPlayerController</strong> blueprint and add a <strong>Dialogue Component</strong> component to it. The component is just called <strong>Dialogue</strong> in the editor. The dialogue component is required to show the dialogue to the player. It handles dialogue widgets, playing audio, and playing cinematics.</p>
-											<span class="image main"><img src="/Docs/images/AddDialogueComponent.png" alt="" /></span>
+										<li><p>Open the <strong>BP_FirstPersonPlayerController</strong> blueprint and add a <strong>Dialogue Component</strong> component to it. The component is just called <strong>Dialogue</strong> in the editor. The dialogue component is required to show the dialogue to the player. It handles dialogue widgets, playing audio, and playing cinematics.</p>
+											<span class="image main"><img width = 100% src="/Docs/images/AddDialogueComponent.png" alt="" /></span>
 										</li>
 										<li><p>Open Project settings, scroll all the way down to <strong>Dialogue System Settings</strong> and make sure the <strong>Default Dialogue Widget Class</strong> is set to <strong>WBP_DialogueWidget</strong>. This is the widget used to show the dialogue texts on screen.</p>
-											<span class="image main"><img src="/Docs/images/DialogueSettingsPage.png" alt="" /></span>
+											<span class="image main"><img width = 100% src="/Docs/images/DialogueSettingsPage.png" alt="" /></span>
 										</li>
 									</ol>
 									<p>
@@ -64,7 +64,7 @@
 									<p>
 										The dialogue editor interface is similar to the quest editor, except it has seperate details panels for the dialogue itself and the nodes in the dialogue graph.
 									</p>
-									<span class="image main"><img src="/Docs/images/DialogueEditorLayout.png" alt="Dialogue editor layout" /></span>
+									<span class="image main"><img width = 100% src="/Docs/images/DialogueEditorLayout.png" alt="Dialogue editor layout" /></span>
 									
 									<p>To add a dialogue entity to your graph, drag and drop the entity from the palette, or right click on the graph and select the entity from the context menu.</p>
 									<p>Every dialogue asset has a begin node. This node will fire when the dialogue starts playing and any entities connected to this node will be played.</p>
@@ -72,7 +72,7 @@
 									<br/>
 									
 									<h3>Anatomy of a node</h3>
-									<span class="image"><img src="/Docs/images/DialogueBranchNodeLayout.png" alt="Dialogue Branch Node Layout" /></span>
+									<span class="image"><img width = 100% src="/Docs/images/DialogueBranchNodeLayout.png" alt="Dialogue Branch Node Layout" /></span>
 									<p>
 										Dialogue entity nodes only have one input pin. This is the <strong>Play</strong> pin. Dialogue entity nodes can have multiple output pins.
 									</p>
@@ -85,19 +85,19 @@
 									<ol>
 										<li>
 											<p>Click on the <strong>New Participant</strong> button on the toolbar. This should open the Add New Participant menu.</p>
-											<span class="image main"><img src="/Docs/images/NewParticipantMenu.png" alt="" /></span>
+											<span class="image main"><img width = 100% src="/Docs/images/NewParticipantMenu.png" alt="" /></span>
 										</li>
 										<li>
 											<p>
 												Select the type of participant. We need to represent the player character so select the <strong>Player Dialogue Participant</strong> type. Set the player index to 0, Set the Unique name for the participant to "Player and press Commit. We now have a participant for our dialogue.
 											</p>
-										<span class="image main"><img src="/Docs/images/AddParticipantFilledOut.png" alt="" /></span>
+										<span class="image main"><img width = 100% src="/Docs/images/AddParticipantFilledOut.png" alt="" /></span>
 										</li>
 										<li>
 											<p>
 												In the dialogue details panel, set the primary participant to the <strong>Player</strong> participant.
 											</p>
-										<span class="image main"><img src="/Docs/images/SetPrimaryParticipant.png" alt="" /></span>
+										<span class="image main"><img width = 100% src="/Docs/images/SetPrimaryParticipant.png" alt="" /></span>
 										</li>
 									</ol>
 
@@ -106,32 +106,22 @@
 									<p>Let's now script our dialogue.</p>
 									<ol>
 										<li>
-											<p>Add a <strong>Dialogue Piece</strong> entity to the dialogue graph.</p>
-											<span class="image main"><img src="/Docs/images/NewParticipantMenu.png" alt="" /></span>
-										</li>
-										<li>
-											<p>
-												Select the type of participant. We need to represent the player character so select the <strong>Player Dialogue Participant</strong> type. Set the player index to 0, Set the Unique name for the participant to "Player" and press Commit. We now have a participant for our dialogue. Every dialogue will need a player character as the participant to play the dialogue for the character.
-											</p>
-										<span class="image main"><img src="/Docs/images/AddParticipantFilledOut.png" alt="" /></span>
-										</li>
-										<li>
 											<p>
 												We want to show some text when the dialogue starts. In this example, the player is greeted with a "Hello". To show this, add a <strong>Dialogue Piece</strong> node to the graph and connect the begin node's output pin to the Play pin of the dialogue piece node.
 											</p>
-											<span class="image main"><img src="/Docs/images/HelloDialoguePieceNodeAdded.png" alt="" /></span>
+											<span class="image main"><img width = 100% src="/Docs/images/HelloDialoguePieceNodeAdded.png" alt="" /></span>
 										</li>
 										<li>
 											<p>
 												The player should gets two choices on how to reply. Add a <strong>Player Dialogue Choice</strong> node. In the details panel, Add two elements in the <strong>Choices</strong> array and set them to the type <strong>Dialogue Piece</strong>. Fill the <strong>Dialogue Text</strong> field with your options. In this example, the player gets choices to either say nothing or say hi. The breif dialogue text field can be left empty as it is not used in this example. Since the player is the character replying, set the <strong>Default Speaker</strong> to the <strong>Player</strong> participant.
 											</p>
-											<span class="image main"><img src="/Docs/images/FirstDialaguePlayerChoices.png" alt="" /></span>
+											<span class="image main"><img width = 100% src="/Docs/images/FirstDialaguePlayerChoices.png" alt="" /></span>
 										</li>
 										<li>
 											<p>
 												Add two <strong>Dialogue Piece</strong> nodes and  connect them as shown below. These are the responses to the player choice. In this example the first response (to being ignored) is "Rude!" and the second response (to hi) is "How are you doing?".
 											</p>
-											<span class="image main"><img src="/Docs/images/RudeReplyDialoguePiece.png" alt="" /></span>
+											<span class="image main"><img width = 100% src="/Docs/images/RudeReplyDialoguePiece.png" alt="" /></span>
 										</li>
 									</ol>
 
@@ -142,7 +132,7 @@
 										In this example we will play the dialogue from the level Blueprint. Open the level blueprint and override the function <strong>Event BeginPlay</strong>.
 										Right click on the graph and search for <strong>Get Game State</strong>. pull from the Return Value pin and search for <strong>Get Component by Class</strong>. Set Component class to <strong>Dialogue Manager</strong>. Call <Strong>Play Dialogue</Strong> on the dialogue manager and pass it the dialogue asset <strong>D_YourFirstDialogue</strong>.
 									</p>
-									<span class="image main"><img src="/Docs/images/PlayDialogueFromLevelBP.png" alt="" /></span>
+									<span class="image main"><img width = 100% src="/Docs/images/PlayDialogueFromLevelBP.png" alt="" /></span>
 									<p>
 										Hit play in the editor to start a PIE session. The dialogue should now play.
 									</p>
@@ -151,6 +141,19 @@
 									</video>
 									<p>
 										Your dialogue is ready!
+									</p>
+
+									<h2>Dialogues inside quests</h2>
+									<p>
+										Dialogues do not need to be their own assets. They can be created and edited inside a quest asset. Add a Dialogue action node to the graph to create a dialogue inside the quest.
+									</p>
+									<span class="image main"><img width = 100% src="/Docs/images/DialogueInQuest.png" alt="" /></span>
+									<p>
+										Double click the dialogue node to move to the Dialogue Editor mode to edit the dialogue.
+									</p>
+									<span class="image main"><img width = 100% src="/Docs/images/DialogueInQuestEditor.png" alt="" /></span>
+									<p>
+										These dialogues will be played by the quest manager automatically when the dialogue action is activated. The action is completed when the dialogue has finished playing.
 									</p>
 
 								</section>

@@ -23,31 +23,53 @@
 										<h1>Notebooks</h1>
 									</header>
 
-									<span class="image main"><img src="/Docs/images/pic11.jpg" alt="" /></span>
+									<span class="image main"><img  width = 100% src="/Docs/images/pic11.jpg" alt="" /></span>
 
-									<ol>
-										<li><p>Right click on the content browser, go to the <strong>Quest System</strong> section and select <strong>Action Sequence</strong></p></li>
-										<li><p></p></li>
-										<li><p></p></li>
-									</ol>
-
-									<hr class="major" />
-
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
-									<hr class="major" />
-
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p>
+										The notebook system is a custom property system in the quest system plugin that can be used to manage data for the quests. These properties can be accessed inside a quest asset or in blueprints. There are two types of Notebooks:
+									</p>
+									<ul>
+										<li><p>
+											<strong>Local Notebooks:</strong> These are contained within a quest asset and can only be accessed inside that quest asset.
+										</p></li>
+										<li><p>
+											<strong>Global Notebooks:</strong> These are notebook assets that contain properties within. These can be accessed anywhere in the project, in all quest assets and blueprints.
+										</p></li>
+									</ul>
 
 									<hr class="major" />
 
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2>Global notebooks</h2>
+									<p>
+										To create a global notebook asset, right click on the content browser and select <strong>Quest system</strong> -> <strong>Notebook</strong>. We recommend adding a <strong>NB_</strong> prefix to the asset. This example notebook is named <strong>NB_FirstNotebook</strong>.
+									</p>
+									<p>
+										To add properties to a notebook asset, click on the plus button on the <strong>Properties</strong> field. Click on the property's name to edit the property. Properties are referenced using their unique ID, so renaming properties does not break references. The example property is a boolean with name NewProperty.
+									</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/NotebookEditor.png" alt="" /></span>
+									<p>
+										Accessing the property in a quest asset will mostly be done using property bindings. For more info on property bindings, go to the <a href="/Docs/QuestSystemPlugin/UsingThePlugin/property-bindings.html">Property Bindings page</a>.
+										To create a property binding, select the node representing the action requiring the binding and press on the <strong>Bind</strong> button. Then select the property you want to bind to. In the example below, we have a branch action inside a quest graph and we want to set the condition using the boolean property in the <strong>NB_FirstNotebook</strong> notebook. The binding will be applied when the branch action is activated.
+									</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/BoolPropertyBinding.png" alt="" /></span>
+									<p>
+										Another way to access notebook properties is by using Setter nodes inside the quest and dialogue graphs. These have a <strong>Property Setter</strong> field that will take a notebook property reference and the value to set. The value field changes type based on the type of notebook property being referneced. In the example below, we have a boolean field for the example boolean property.
+									</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/SetNotebookPropertyNode.png" alt="" /></span>
+									<p>
+										To access notebook properties inside a blueprint, use any of the custom setter and getter nodes. The <strong>Set Notebook property</strong> and <strong>Get Notebook Property</strong> nodes have a wildcard pin for the value that is decided by the selected notebook property. The type specific nodes do not have wildcards, except the struct nodes which take a wildcard for the type of struct being accessed.
+									</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/NotebookNodesSample.png" alt="" /></span>
+
+									<hr class="major" />
+
+									<h2>Local notebooks</h2>
+									<p>
+										Every action sequence asset has a notebook object in it. These are local notebooks that can only be accessed inside that action sequence. Accessing local notebooks properties is similar to accessing global notebook properties. You can bind to the properties and set them with the setter nodes. Because these properties cannot be accessed outside the asset, these cannot be accessed in notebooks.
+									</p>
+									<p>
+										In the editor for any Action Sequence asset, go to the notebook editor by pressing the notebook editor button on the top right of the toolbar.
+									</p>
 
 								</section>
 

@@ -35,26 +35,26 @@ class Sidebar extends HTMLElement {
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Creating a simple quest</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-dialogue.html">Creating dialogues</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/an-intro-to-notebooks.html">An intro to Notebooks</a></li>
-														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/an-intro-to-notebooks.html">An intro to Services</a></li>
-														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Saving and loading quests</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/an-intro-to-services.html">An intro to Services</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/saving-and-loading-quests.html">Saving and loading quests</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/property-bindings.html">Property bindings</a></li>
 														<li>
 															<span class="opener">Advanced</span>
 															<ul>
-																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Exposing pins to outer graphs</a></li>
-																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Asset instances and Asset references</a></li>
+																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/nested-action-sequences.html">Nested action sequences</a></li>
+																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/exposing-pins-to-outer-graph.html">Exposing pins to outer graphs</a></li>
+																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/asset-instances-references.html">Asset instances and Asset references</a></li>
 															</ul>
 														</li>
-														<li><a href="/Docs/QuestSystemPlugin/architecture.html">Uses outside of the quest system</a></li>
 													</ul>
 												</li>
 												<li>
 													<span class="opener">Extending the Plugin</span>
 													<ul>
-														<li><a href="/Docs/QuestSystemPlugin/adding-new-actions.html">Writing custom action types</a></li>
-														<li><a href="/Docs/QuestSystemPlugin/architecture.html">Writing custom dialogue entities</a></li>
-														<li><a href="/Docs/QuestSystemPlugin/architecture.html">Writing custom dialogue participant types</a></li>
-														<li><a href="/Docs/QuestSystemPlugin/architecture.html">Writing custom dialogue fragments</a></li>
-														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Custom dialogue players</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/ExtendingThePlugin/custom-action.html">Writing custom action types</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/ExtendingThePlugin/custom-dialogue-entity.html">Writing custom dialogue entities</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/ExtendingThePlugin/custom-dialogue-participant.html">Writing custom dialogue participant types</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/ExtendingThePlugin/custom-dialogue-fragment.html">Writing custom dialogue fragments</a></li>
 													</ul>
 												</li>
 												<li><a href="/Docs/QuestSystemPlugin/api-documentation.html">API documentation</a></li>
