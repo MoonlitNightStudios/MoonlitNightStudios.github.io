@@ -27,11 +27,8 @@
 
 									<h2>What is the quest system plugin</h2>
 									<p>
-										The quest system plugin provides tools and framework for managing quests and dialogues and custom editors to script quests and dialogues. It is designed
+										The quest system plugin provides tools and framework for managing quests and dialogues. It also provides custom editors to script quests and dialogues. It is designed
 										to be easy and intuitive to use with minimal setup required to get up and running. It is also designed to be easy to extend to suit your project's specific needs.
-									</p>
-									<p>
-										The quest editor can also be used as a generic flow graph editor.
 									</p>
 
 									<!-- Section -->
@@ -100,6 +97,26 @@
 										<li><p><strong>Dialogue Player:</strong> If required, create a subclass of UDialoguePlayer and set that as the default dialogue player in the project settings. This handles playing the dialogue on the server.</p></li>
 										<li><p><strong>Quest Manager:</strong> If your project is a networked multiplayer game, add the Quest Manager component to your game state class. This component will handle the replication of quests.</p></li>
 									</ul>
+
+									<hr class="major" />
+
+									<h2>Quest lifecycle</h2>
+									<p>Quests assets are just templates for the quest. The Quest Subsystem duplicates quests at runtime and runs that copy when executing the quest. When a quest is duplicated by the quest subsystem 
+										and added to the managed list of quests, it is marked as <i><b>Initialised</b></i>, which just means it has been loaded and ready for activation. The Initialise function is called on the quest and all its actions which is a great place to prime the quest before it is activated.</p>
+									<p>An initialised quest needs to be activated for the quest to start. Quests marked as <i><b>Auto Activate = true</b></i> will be automatically activated by the 
+									quest subsystem when it is loaded and initialised. Other quests need to be manually activated by calling activate on the quests. Another way to activate quests is by using <i><b>Triggers</b></i>.
+									Triggers are actions inside a quest that get activated as soon as a quest is initialised. Activating a trigger does not activate the quest itself. Instead, when a trigger's requirements are satisfied, it will activate the quest.</p>
+									<p>An active quest can be deactivated. A deactivated quest is dormant until reactivated. When reactivated, the quest will resume from the point where it was deactivated.</p>
+									<p>The last state a quest can be in is <i><b>Ended</b></i>. A quest can be marked as ended when it is completed, failed, etc. A quest that has ended cannot be reactivated.</p>
+									<p>Quest replication is handled by the <strong>Quest Manager.</strong> This is a component that should be added to the Game State class.</p>
+									<p>
+										A typical quest lifecycle is as follows:
+										<ol>
+											<li><p><strong>LoadQuests</strong> is called on the Quest Subsystem with the diretory in which the quest assets are stored as the parameter.</p></li>
+											<li><p>The quests will be duplicated, initialised (which activated any triggers) and, if quest is marked to AutoActivate, activates the quest. If a Quest Manager is present, quests will be replicated to clients.</p></li>
+											<li><p>When an active quest ends, it is marked as ended. It is still held in memory but should not perform any tasks.</p></li>
+										</ol>
+									</p>
 
 									<hr class="major" />
 

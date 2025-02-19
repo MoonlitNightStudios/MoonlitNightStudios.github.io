@@ -20,22 +20,76 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Creating Quests</h1>
+										<h1>Creating Dialogues</h1>
 									</header>
 
 									<span class="image main"><img src="/Docs/images/pic11.jpg" alt="" /></span>
 
+									<h2>Creating the dialogue asset</h2>
 									<ol>
-										<li><p>Right click on the content browser, go to the <strong>Quest System</strong> section and select <strong>Action Sequence</strong></p></li>
-										<li><p></p></li>
-										<li><p></p></li>
+										<li><p>Right click on the content browser and select <strong>Quest System</strong> -> <strong>Dialogue</strong>.</p></li>
+										<li><p>Name your dialogue asset. We recommend prefixing your asset with <strong>D_</strong> so your dialogue asset can be <strong>D_YourFirstDialogue</strong>.</p></li>
+										<li><p>Double click the asset to open the editor. Your dialogue asset is ready for you to work with!</p></li>
 									</ol>
 
 									<hr class="major" />
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>An intro to the dialogue editor</h2>
+									<p>
+										The dialogue editor interface is similar to the quest editor, except it has seperate details panels for the dialogue itself and the nodes in the dialogue graph.
+									</p>
+									<span class="image main"><img src="/Docs/images/DialogueEditorLayout.png" alt="Dialogue editor layout" /></span>
+									
+									<p>To add a dialogue entity to your graph, drag and drop the entity from the palette, or right click on the graph and select the entity from the context menu.</p>
+									<p>Every dialogue asset has a begin node. This node will fire when the dialogue starts playing and any entities connected to this node will be played.</p>
+									
+									<br/>
+									
+									<h3>Anatomy of a node</h3>
+									<span class="image"><img src="/Docs/images/DialogueBranchNodeLayout.png" alt="Dialogue Branch Node Layout" /></span>
+									<p>
+										Dialogue entity nodes only have one input pin. This is the <strong>Play</strong> pin. Dialogue entity nodes can have multiple output pins.
+									</p>
+
+									<hr class="major" />
+
+									<h2>Example dialogue</h2>
+									<p>Lets create our very first dialogue! Follow the steps below to create a simple dialogue in which the player is greeted with a Hello, the player has two choices to reply with, and the two choices lead to different responses.</p>
+									<p>First we need to setup the participants for the dialogue. A dialogue will need the player character as a participant to play the dialogue to the player. Follow the steps below to add a participant.</p>
+									<ol>
+										<li>
+											<p>Click on the <strong>New Participant</strong> button on the toolbar. This should open the Add New Participant menu.</p>
+											<span class="image main"><img src="/Docs/images/NewParticipantMenu.png" alt="" /></span>
+										</li>
+										<li>
+											<p>
+												Select the type of participant. We need to represent the player character so select the <strong>Player Dialogue Participant</strong> type. Set the player index to 0, Set the Unique name for the participant to "Player and press Commit. We now have a participant for our dialogue.
+											</p>
+										<span class="image main"><img src="/Docs/images/AddParticipantFilledOut.png" alt="" /></span>
+										</li>
+										<li></li>
+											<p>
+												In the dialogue details panel, set the primary participant to the <strong>Player</strong> participant.
+											</p>
+										<span class="image main"><img src="/Docs/images/SetPrimaryParticipant.png" alt="" /></span>
+										</li>
+									</ol>
+
+									<hr class="major" />
+
+									<p>Let's now script our dialogue.</p>
+									<ol>
+										<li>
+											<p>Add a <strong>Dialogue Piece</strong> entity to the dialogue graph.</p>
+											<span class="image main"><img src="/Docs/images/NewParticipantMenu.png" alt="" /></span>
+										</li>
+										<li>
+											<p>
+												Select the type of participant. We need to represent the player character so select the <strong>Player Dialogue Participant</strong> type. Set the player index to 0, Set the Unique name for the participant to "Player and press Commit. We now have a participant for our dialogue.
+											</p>
+										<span class="image main"><img src="/Docs/images/AddParticipantFilledOut.png" alt="" /></span>
+										</li>
+									</ol>
 
 									<hr class="major" />
 
