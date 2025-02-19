@@ -25,6 +25,32 @@
 
 									<span class="image main"><img src="/Docs/images/pic11.jpg" alt="" /></span>
 
+									<h2>Setting up the dialogue system</h2>
+									<p>
+										The dialogue system needs a dialogue manager and dialogue component to work. Follow the steps below to get the dialogue system ready to handle dialogues. This example assumes we are using the first person template like in the <a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html"><strong>YourFirstQuest</strong></a> example.
+									</p>
+									<ol>
+										<li><p>Create a Game State blueprint derived from <strong>AGameStateBase</strong> and call it <strong>BP_FirstPersonGameState</strong>. Open the blueprint and add a <strong>Manager component</strong>. The game state class must derive from AGameStateBase and not AGameState as the Game Mode class in the first person shooter template derives from AGameModeBase and not AGameMode.
+											The dialogue manager is required to play the dialogue.
+										</p>
+											<span class="image main"><img src="/Docs/images/AddDialogueManager.png" alt="" /></span>
+										</li>
+										<li><p>Open the <Strong>BP_FirstPersonGameMode</Strong> blueprint and set the Game State as <Strong>BP_FirstPersonGameState</Strong>.</p>
+											<span class="image main"><img src="/Docs/images/SetGameStateInGameMode.png" alt="" /></span>
+										</li>
+										<li><p>Open the <strong>BP_FirstPesronPlayerController</strong> blueprint and add a <strong>Dialogue Component</strong> component to it. The component is just called <strong>Dialogue</strong> in the editor. The dialogue component is required to show the dialogue to the player. It handles dialogue widgets, playing audio, and playing cinematics.</p>
+											<span class="image main"><img src="/Docs/images/AddDialogueComponent.png" alt="" /></span>
+										</li>
+										<li><p>Open Project settings, scroll all the way down to <strong>Dialogue System Settings</strong> and make sure the <strong>Default Dialogue Widget Class</strong> is set to <strong>WBP_DialogueWidget</strong>. This is the widget used to show the dialogue texts on screen.</p>
+											<span class="image main"><img src="/Docs/images/DialogueSettingsPage.png" alt="" /></span>
+										</li>
+									</ol>
+									<p>
+										The dialogue system is ready to be used!
+									</p>
+
+									<hr class="major" />
+
 									<h2>Creating the dialogue asset</h2>
 									<ol>
 										<li><p>Right click on the content browser and select <strong>Quest System</strong> -> <strong>Dialogue</strong>.</p></li>
@@ -67,7 +93,7 @@
 											</p>
 										<span class="image main"><img src="/Docs/images/AddParticipantFilledOut.png" alt="" /></span>
 										</li>
-										<li></li>
+										<li>
 											<p>
 												In the dialogue details panel, set the primary participant to the <strong>Player</strong> participant.
 											</p>
@@ -85,23 +111,47 @@
 										</li>
 										<li>
 											<p>
-												Select the type of participant. We need to represent the player character so select the <strong>Player Dialogue Participant</strong> type. Set the player index to 0, Set the Unique name for the participant to "Player and press Commit. We now have a participant for our dialogue.
+												Select the type of participant. We need to represent the player character so select the <strong>Player Dialogue Participant</strong> type. Set the player index to 0, Set the Unique name for the participant to "Player" and press Commit. We now have a participant for our dialogue. Every dialogue will need a player character as the participant to play the dialogue for the character.
 											</p>
 										<span class="image main"><img src="/Docs/images/AddParticipantFilledOut.png" alt="" /></span>
+										</li>
+										<li>
+											<p>
+												We want to show some text when the dialogue starts. In this example, the player is greeted with a "Hello". To show this, add a <strong>Dialogue Piece</strong> node to the graph and connect the begin node's output pin to the Play pin of the dialogue piece node.
+											</p>
+											<span class="image main"><img src="/Docs/images/HelloDialoguePieceNodeAdded.png" alt="" /></span>
+										</li>
+										<li>
+											<p>
+												The player should gets two choices on how to reply. Add a <strong>Player Dialogue Choice</strong> node. In the details panel, Add two elements in the <strong>Choices</strong> array and set them to the type <strong>Dialogue Piece</strong>. Fill the <strong>Dialogue Text</strong> field with your options. In this example, the player gets choices to either say nothing or say hi. The breif dialogue text field can be left empty as it is not used in this example. Since the player is the character replying, set the <strong>Default Speaker</strong> to the <strong>Player</strong> participant.
+											</p>
+											<span class="image main"><img src="/Docs/images/FirstDialaguePlayerChoices.png" alt="" /></span>
+										</li>
+										<li>
+											<p>
+												Add two <strong>Dialogue Piece</strong> nodes and  connect them as shown below. These are the responses to the player choice. In this example the first response (to being ignored) is "Rude!" and the second response (to hi) is "How are you doing?".
+											</p>
+											<span class="image main"><img src="/Docs/images/RudeReplyDialoguePiece.png" alt="" /></span>
 										</li>
 									</ol>
 
 									<hr class="major" />
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
-									<hr class="major" />
-
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2>Playing the dialogue</h2>
+									<p>
+										In this example we will play the dialogue from the level Blueprint. Open the level blueprint and override the function <strong>Event BeginPlay</strong>.
+										Right click on the graph and search for <strong>Get Game State</strong>. pull from the Return Value pin and search for <strong>Get Component by Class</strong>. Set Component class to <strong>Dialogue Manager</strong>. Call <Strong>Play Dialogue</Strong> on the dialogue manager and pass it the dialogue asset <strong>D_YourFirstDialogue</strong>.
+									</p>
+									<span class="image main"><img src="/Docs/images/PlayDialogueFromLevelBP.png" alt="" /></span>
+									<p>
+										Hit play in the editor to start a PIE session. The dialogue should now play.
+									</p>
+									<video width = 100% controls>
+										<source src="/Docs/videos/FirstDialogueVideo.mp4" type="video/mp4">
+									</video>
+									<p>
+										Your dialogue is ready!
+									</p>
 
 								</section>
 
