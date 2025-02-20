@@ -9,12 +9,12 @@ class Sidebar extends HTMLElement {
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
+							<!-- Search >
 								<section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
-								</section>
+								</section-->
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -36,8 +36,10 @@ class Sidebar extends HTMLElement {
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-dialogue.html">Creating dialogues</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/an-intro-to-notebooks.html">An intro to Notebooks</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/an-intro-to-services.html">An intro to Services</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/quest-tracking.html">Quest tracking</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/saving-and-loading-quests.html">Saving and loading quests</a></li>
 														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/property-bindings.html">Property bindings</a></li>
+														<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/quest-replication.html">Quest replication</a></li>
 														<li>
 															<span class="opener">Advanced</span>
 															<ul>

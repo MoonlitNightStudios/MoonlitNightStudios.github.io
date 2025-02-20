@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>YourFirstQuest | QuestSystemPlugin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<header-component></header-component>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Quest replication</h1>
+									</header>
+
+									<span class="image main"><img width = 100% src="/Docs/images/pic11.jpg" alt="" /></span>
+
+									<p>
+										Quests are always executed on the server but they can send data to clients either using Replicated properties or by using RPCs. By default quests will replciate but the contained quest actions are set to not replicate. You can mark an action to replciate by setting the Replication policy on the action.
+									</p>
+									<p>
+										Quest actions will only replicate if their outer object replicates. So an action contained within an action sequence will only replicate if the action sequence replicates.
+									</p>
+									
+									<hr class="major" />
+
+									<h2>Replication policy</h2>
+									<p>
+										Replication policy decides when an action replicates its properties. There are five policies:
+									</p>
+									<ul>
+										<li><p><strong>Never Replicate</strong>: The action will never replicate its properties.</p></li>
+										<li><p><strong>Replicate While Active</strong>: The action will replicate its properties only while it is active. Do note that an action that completes as soon as it activates (like the Spawn Enemies action which activates, spawns actors, completes) will not replicate its properties if it is set to replciate only while active.</p></li>
+										<li><p><strong>Replicate Always</strong>: The action will replicate its properties always, from being loaded by the quest subsystem until it is removed.</p></li>
+										<li><p><strong>Replicate Once Active</strong>: The action will start to replicate its properties when activated and will keep replicating until the quest is removed from the subsystem.</p></li>
+										<li><p><strong>Replicate Until Ended</strong>: The action will start to replicate its properties as soon as it is loaded and will stop replicating once it has ended.</p></li>
+									</ul>
+
+									<hr class="major" />
+
+									<h2>Quest Manager</h2>
+									<p>
+										The quest manager handles replicating quests to clients. Without the quest manager, quests created on the server will not be created on the client. To setup your project to allow quest replciation, just add a Quest Manager component to your game state class.
+									</p>
+									<span class="image main"><img width = 100% src="/Docs/images/QuestManager.png" alt="Quest manager"/></span>
+
+								</section>
+
+						</div>
+					</div>
+
+				<sidebar-component></sidebar-component>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/header.js"></script>
+			<script src="../../assets/js/sidebar.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
