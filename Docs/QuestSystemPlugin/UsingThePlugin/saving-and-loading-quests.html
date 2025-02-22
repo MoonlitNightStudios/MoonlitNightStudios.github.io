@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>CreatingQuests | QuestSystemPlugin</title>
+		<title>SavingLoadingQuests | QuestSystemPlugin</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
@@ -40,7 +40,7 @@
 									</p>
 
 									<p>
-										These archive structs can be conviniently stored inside a Save Game object. Continuing the first person shooter example from <a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Your First Quest</a> example, Create a blueprint derived from <strong>USaveGame</strong> and call it <strong>BP_SaveGame</strong>.
+										These archive structs can be conveniently stored inside a Save Game object. Continuing the first person shooter example from <a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Your First Quest</a> example, Create a blueprint derived from <strong>USaveGame</strong> and call it <strong>BP_SaveGame</strong>.
 										Create two variables in the save game blueprint of type <strong>FQuestSaveArchive</strong> and <strong>FNotebookSaveArchive</strong> and call them QuestsArchive and NotebooksArchive respectively. These will be saved when the save object is saved to a file.
 									</p>
 									<span class="image main"><img width = 100% src="/Docs/images/SaveGameObjectWithArchives.png" alt="" /></span>
@@ -50,11 +50,11 @@
 									</p>
 									<ol>
 										<li>
-											<p>Create a blueprint derived from <strong>UGameInstance</strong> and call it BP_GameInstance. Create variables <strong>SaveObject</strong> of type <strong>BP_SaveGame</strong> and <strong>SlotName</strong> of type <strong>String</strong>. We will create the save object when the game starts. For now, set the SlotName variable's value to a non-empty value. This will be the name of the save file.</p>
-											<span class="image main"><img width = 100% src="/Docs/images/GameInstance.png" alt="" /></span>
+											<p>Open the <strong>BP_FirstPersonGameMode</strong> blueprint. Create variables <strong>SaveObject</strong> of type <strong>BP_SaveGame</strong> and <strong>SlotName</strong> of type <strong>String</strong>. We will create the save object when the game starts. For now, set the SlotName variable's value to a non-empty value. This will be the name of the save file.</p>
+											<span class="image main"><img width = 100% src="/Docs/images/GameMode.png" alt="" /></span>
 										</li>
 										<li>
-											<p>Create a custom event and call it <strong>Load</strong>. Script the function as shown below. The first half of the function checks if we have a save object file. If we have one we load it and load quests and notebooks from it. If we don't have a saved file, we just create a save game object to use later. We then load quest assets. If you followed the <a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Your First Quest</a> example, remember to remove the call to Load Quest Assets from the level blueprint.</p>
+											<p>Create a custom event and call it <strong>Load</strong>. Script the function as shown below. The first part of the function checks if we have a save object file. If we have one we load it and load quests and notebooks from it. If we don't have a saved file, we just create a save game object to use later. We then load quest assets. If you followed the <a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Your First Quest</a> example, remember to remove the call to <strong>Load Quest Assets</strong> from the level blueprint.</p>
 											<span class="image main"><img width = 100% src="/Docs/images/LoadGameFunc.png" alt="" /></span>
 										</li>
 										<li>
@@ -62,16 +62,13 @@
 											<span class="image main"><img width = 100% src="/Docs/images/SaveGameFunc.png" alt="" /></span>
 										</li>
 										<li>
-											<P>Override the <strong>Init</strong> and <strong>Shutdown</strong> functions in the game instance blueprint. Call <strong>Load</strong> from the <strong>Init</strong> Function and <strong>Save</strong> from the <strong>Shutdown</strong> function.</P>
+											<P>Override the <strong>Event Begin Play</strong> and <strong>Event End Play</strong> functions in the game mode blueprint. Call <strong>Load</strong> from the <strong>Event Begin Play</strong> Function and <strong>Save</strong> from the <strong>Event End Play</strong> function.</P>
 											<span class="image main"><img width = 100% src="/Docs/images/LoadAndSaveGame.png" alt="" /></span>
 										</li>
-										<li>
-											<P>Open project settings, go to <strong>Project</strong>-><strong>Maps & Modes</strong> and set the <strong>Game Instance Class</strong> to <strong>BP_GameInstance</strong>.</P>
-											<span class="image main"><img width = 100% src="/Docs/images/SetGameInstance.png" alt="" /></span>
-										</li>
 									</ol>
-									<p>The project will now save and load quests and notebooks. If you want to start the quests fresh and not from a saved state, disconnect the Load fucntion from the Init function or delete the SaveGame file which is located in the Project/Saved/SaveGame folder.</p>
+									<p>The project will now save and load quests and notebooks. If you want to start the quests fresh and not from a saved state, delete the SaveGame file which is located in the Project/Saved/SaveGames folder.</p>
 									<p>This only saves and loads quests and notebooks. Other data that needs to be saved, such as actors or player data are not handled. Do note that actors spawned from a quest are <strong>not</strong> saved and loaded with the quest.</p>
+									<p>This method will save and load quests when changing worlds. The first person example does not need to change worlds but if your game nees to change worlds, the game instance is a better place to manage saving and loading.</p>
 								</section>
 
 						</div>
