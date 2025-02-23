@@ -59,7 +59,12 @@ class Sidebar extends HTMLElement {
 														<li><a href="/Docs/QuestSystemPlugin/ExtendingThePlugin/custom-dialogue-fragment.html">Writing custom dialogue fragments</a></li>
 													</ul>
 												</li>
-												<li><a href="/Docs/QuestSystemPlugin/api-documentation.html">API documentation</a></li>
+												<li>
+													<span class="opener">API Documentation</span>
+													<ul>
+														<li><a href="/Docs/QuestSystemPlugin/APIDocumentation/meta-data-specifiers.html">Meta data specifiers</a></li>
+													</ul>
+												</li>
 											</ul>
 										</li>
 									</ul>

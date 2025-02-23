@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MetaDataSpecifiers | QuestSystemPlugin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<header-component></header-component>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Meta Data Specifiers</h1>
+									</header>
+
+									<span class="image main"><img  width = 100% src="/Docs/images/pic11.jpg" alt="" /></span>
+
+									<p>
+										The quest system's editor relies on meta data specifiers on UPorperties, UFunctions and UClasses. This page has a list of meta data specifiers used in the quest system plugin and their purposes.
+									</p>
+
+									<h2>UClass specifiers</h2>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Meta data</th>
+													<th>Description</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>MakeTrigger</td>
+													<td>Used in a UQuestAction class's UCLASS macro. Makes a trigger node for the action.</td>
+												</tr>
+												<tr>
+													<td>MakeEvent</td>
+													<td>Used in a UQuestAction class's UCLASS macro. Makes an event node for the action.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+									<h2>UProperty specifiers</h2>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Meta data</th>
+													<th>Description</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>NotebookBindable</td>
+													<td>Makes it possible to create bindings to notebook properties from details panel.</td>
+												</tr>
+												<tr>
+													<td>NotebookBindingUpdateFrequency</td>
+													<td>Used with NotebookBindable. Specifies the binding update frequency. Default is ActivationOnly. Options: InitialOnly, ActivationOnly, EndOnly.</td>
+												</tr>
+												<tr>
+													<td>NotebookBindingSource</td>
+													<td>Used with NotebookBindable. Specifies that this property is the source of value for the notebook binding. The notebook property will be the target to which the value is copied to.</td>
+												</tr>
+												<tr>
+													<td>ActionExec</td>
+													<td>Only for delegates. Makes this delegate an output for the action.</td>
+												</tr>
+												<tr>
+													<td>ExposeAsInput</td>
+													<td>Expose a UProperty as an input pin for the action node.</td>
+												</tr>
+												<tr>
+													<td>ExposeAsOutput</td>
+													<td>Expose a UProperty as an Output pin for the action node.</td>
+												</tr>
+												<tr>
+													<td>PreserveDuringAssetInstanceReplacement</td>
+													<td>Used to let the editor know to not change the property's value when updating copies of the asset's instances.</td>
+												</tr>
+												<tr>
+													<td>ParticipantNotInThisDialogue</td>
+													<td>Used for FDialogueParticipantReference property. Indicates not to use the outer dialogue for the participant reference.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+									<h2>UFunction specifiers</h2>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Meta data</th>
+													<th>Description</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>ActionExec</td>
+													<td>Specifies that the function should be exposed as a input pin for the action.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+								</section>
+
+						</div>
+					</div>
+
+				<sidebar-component></sidebar-component>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/header.js"></script>
+			<script src="../../assets/js/sidebar.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
