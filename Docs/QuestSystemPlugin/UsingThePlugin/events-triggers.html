@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>EventsAndTriggers | QuestSystemPlugin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<header-component></header-component>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Your first quest!</h1>
+									</header>
+
+									<span class="image main"><img  width = 100% src="/Docs/images/pic11.jpg" alt="" /></span>
+
+									<h2>Triggers</h2>
+									<p>Triggers are used to activate quests when a condition is met. For example, if a quest should start after speaking with an NPC, this can be done using trigger action that completes when the NPC has been spoken to.</p>
+									<p>
+										Triggers are just actions marked with <strong>Make Trigger</strong> meta data specifier. Triggers are activated when an action sequence is initlaised. These then behave like actions and perform their task. Once completed, they will broadcast the <strong>OnCompleted</strong> pin. When a trigger completes, the owning action sequence will get activated.
+									</p>
+
+									<hr class="major" />
+
+									<h2>Events</h2>
+									<p>
+										Events are similar to triggers but they are activated when the owning action sequence activates. These then fire when their conditions are met. For example, if you want a specific cinematic to play when the player reaches a location, events can be useful. The <strong>Reach Location</strong> objective has an events variant which can be used in this case.
+									</p>
+									<p>
+										Events are actions marked with <strong>Make Event</strong> meta data specifier.
+									</p>
+									
+								</section>
+
+						</div>
+					</div>
+
+				<sidebar-component></sidebar-component>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/header.js"></script>
+			<script src="../../assets/js/sidebar.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -20,139 +20,83 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Your first quest!</h1>
+										<h1>Asset instances and references</h1>
 									</header>
 
 									<span class="image main"><img  width = 100% src="/Docs/images/pic11.jpg" alt="" /></span>
 
-									<p>This page walks you through creating and playing your first quest with the Quest system Plugin. To follow along with the instructions, create a project in Unreal Engine based on the First Person Shooter template.</p>
-									
-									<hr class="major" />
-
-									<h2>Creating the quest asset</h2>
-									<ol>
-										<li><p>Right click on the content browser and select <strong>Quest System</strong> -> <strong>Action Sequence</strong>.</p></li>
-										<li><p>Select <strong>Quest</strong> as the class for your asset and click Ok.</p></li>
-										<li><p>Name your quest asset. We recommend prefixing your asset with <strong>Q_</strong> so your quest asset can be <strong>Q_YourFirstQuest</strong>.</p></li>
-										<li><p>Double click the asset to open the editor. Your quest asset is ready for you to work with!</p></li>
-									</ol>
-
-									<hr class="major" />
-
-									<h2>An intro to the quest editor</h2>
-									<p>The quest editor interface is similar to other asset editors with graphs in Unreal Engine, like the materials editor and sound editor.
-										The editor has a details panel to show the details of the currently selected object, a graph canvas to script the quest with and 
-										a pallete with all available action blocks for the quest.
-									</p>
-									<span class="image main"><img  width = 100% src="/Docs/images/QuestEditorLayout.png" alt="Quest editor layout" /></span>
-									
-									<p>To add an action to your graph, drag and drop the action from the palette, or right click on the graph and select the action from the context menu.</p>
-									<p>Every quest asset has a begin node. This node will fire when the quest is activated and any actions connected to this node will be activated.</p>
-									
-									<br/>
-									
-									<h3>Anatomy of a node</h3>
-									<span class="image"><img  width = 100% src="/Docs/images/GateActionNodeLayout.png" alt="Gate Action Node Layout" /></span>
 									<p>
-										Actions have two types of pins: Execution pins and Property pins. Execution pins are always in Red and Property pins are always in Yellow.
-										All exposed functions for the action will be shown as red input pins. All exposed delegates will be shown as red output pins.
-										All input properties will be shown as yellow input pins and all output properties will be shown as yellow output pins.
+										When scripting long quests, it is ideal to split one long quest into pieces and have them as seperate assets. This also helps with version control when multiple designers want to edit different sections of the quest. The quest system allows to split a bigger quest into seperate assets and add a refernece of the quest segments to a main quest asset.
 									</p>
 									<p>
-										Every node has an unnamed pin at the right end of the node's title bar. This pin is a property pin and is the reference to the action represented by the node.
-									</p>
-									
-									<span class="image"><img  width = 100% src="/Docs/images/ServiceNodeLayout.png" alt="Service Node Layout" /></span>
-									<p>
-										Service nodes do not have Execution pins. To learn more about Services, go to the <a href="/Docs/QuestSystemPlugin/UsingThePlugin/an-intro-to-services.html">Intro to Services</a> page.
+										It is also useful to have the ability to create action sequence templates that can be reused in other action sequences. The quest system allows creating such assets and creating instances of these assets inside other action sequences.
 									</p>
 									
 									<hr class="major" />
 
-									<h2>Example quest</h2>
-									<p>Lets create our very first quest! Follow the steps below to create a simple quest where the character walks to a location, an actor is spawned into the world, the player destroys it, and the quest ends.</p>
-									<p>We will need an actor that can be destroyed for this quest. Since we are using the first person shooter template, we already have a gun and bullets. Let's create an actor that will be destoyed when hit by a bullet.</p>
+									<h2>Asset references</h2>
+									<p>
+										A quest asset can have references to another action asset (Quest, Action sequence, Dialogue). The referenced asset can be activated like a normal action inside the main quest asset.
+									</p>
+									<p>
+										Multiple assets can reference the same asset. The referenced asset is activated when one of the referencers activated it and then it completes normally. The reference node inside the referencing asset will complete when the referenced asset completes. When a referencing asset tries to activate an asset that is already active, it won't activate it again but will just listen to the complete event. If a referencing asset tries to activate an asset that has already ended, it will not activate the referenced asset but instead will just call complete on the reference node.
+									</p>
+									<p>
+										Follow the steps below to create an action sequence asset and reference it inside a quest asset. Lets use the quest created in the <a href="/Docs/QuestSystemPlugin/UsingThePlugin/your-first-quest.html">Your first quest</a> example. For the action sequence asset, we will create a new one.
+									</p>
 									<ol>
 										<li>
-											<p>Create an actor blueprint and call it BP_DestroyableActor.</p>
+											<p>Right click on the content browser and select <strong>Quest System</strong>-><Strong>Action Sequence</Strong> and select <strong>QuestActionSequence</strong>. Call it <strong>AS_ReferencedAction</strong>.</p>
 										</li>
 										<li>
-											<p>
-												Add a static mesh component and set the mesh to a cube mesh.
-											</p>
-										<span class="image main"><img  width = 100% src="/Docs/images/DestroyableActorLayout.png" alt="" /></span>
+											<p>Lets print a string saying <strong>"Referenced action sequence activated"</strong>when this action sequence gets activated and then delay for 10 seconds and finally complete the action sequence. The graph should like below.</p>
+											<span class="image main"><img  width = 100% src="/Docs/images/ReferencedAction.png" alt="" /></span>
 										</li>
 										<li>
-											<p>
-												Add an OnHit event for the static mesh component. If the hit actor is a <strong>BP_FirstPersonprojectile</strong>, Destroy the actor.
-											</p>
-											<span class="image main"><img  width = 100% src="/Docs/images/DestroyableActorCode.png" alt="" /></span>
-										</li>
-									</ol>
-									<p>The actor is ready. Drop one in the world and try shooting it. It should disappear when hit by a bullet.</p>
-									<hr/>
-									<p>Let's setup the world now.</p>
-									<ol>
-										<li><p>Add a trigger volume to the world at the location you want the character to reach as part of the quest. Call it <strong>ReachLocation</strong>.</p></li>
-										<li><p>
-											Add another trigger volume at the location where you want to spawn the destroyable actor from the quest graph Call it <strong>SpawnLocation</strong>..
-										</p></li>
-									</ol>
-									<p>The world should look something like the one shown below. There is a trigger volume in front of the weapon pickup and another on the platform. The destroyable actor will be spawned on the platform.</p>
-									<span class="image main"><img  width = 100% src="/Docs/images/FirstQuestWorldLayout.png" alt="" /></span>
-									<hr/>
-									<p>Now that the world is setup, lets script the quest.</p>
-									<ol>
-										<li><p>Open the previously created quest asset.</p></li>
-										<li>
-											<p>
-												Add a <b>Reach Location</b> node to the graph and connect the begin node's output pin to the activate pin of the new node. 
-												In the details panel, set the location to the <strong>ReachLocation</strong> trigger volume.
-											</p>
-											<span class="image main"><img  width = 100% src="/Docs/images/FirstQuestReachLocationStep.png" alt="" /></span>
+											<p>Drag and drop the <strong>AS_ReferencedAction</strong> asset on the <strong>Q_YourFirstQuest</strong> graph.</p>
+											<span class="image main"><img  width = 100% src="/Docs/images/DragAndDropReferencedAction.png" alt="" /></span>
 										</li>
 										<li>
-											<p>Add a <b>Spawn Enemies</b> node and connect the completed pin of the <b>Reach Location</b> node to the activate pin of the new node. In the details panel, set the actor class 
-												to <i>BP_DestroyableActor</i> and the location to the <strong>SpawnLocation</strong> trigger volume.
-											</p>
-											<span class="image main"><img  width = 100% src="/Docs/images/FirstQuestSpawnEnemiesStep.png" alt="" /></span>
+											<p>You should get two options, to either create an instance of the asset or create a reference. Choose <strong>Asset Reference</strong>.</p>
+											<span class="image main"><img  width = 100% src="/Docs/images/AssetInstanceReferenceOption.png" alt="" /></span>
 										</li>
-										<li><p>
-												Add an <b>Eliminate Targets</b> node to the graph and connect the <b>Spawn Enemies</b> node's completed pin to the activate pin of the new node. 
-												Connect the <strong>SpawnedEnemies</strong> pin to the <strong>ActorsToEliminate</strong> pin.
-											</p>
-											<span class="image main"><img  width = 100% src="/Docs/images/FirstQuestEliminateEnemiesStep.png" alt="" /></span>
+										<li>
+											<p>You should now have an <strong>Asset Reference Handler</strong> node. Alternatively, you could just right click and search for an <strong>Asset Reference Handler</strong> node and set the Asset to the <strong>AS_ReferencedAction</strong> asset.</p>
+											<span class="image main"><img  width = 100% src="/Docs/images/AssetReferenceNode.png" alt="" /></span>
 										</li>
-										<li><p><span class = "icon solid fa-exclamation"></span> <strong>[Important]</strong> Add a <strong>Complete Action Sequence</strong> node. This node is important as this calls the complete function on the quest and marks it as <i>Ended</i>.
-										 Without this node, the quest will never end and always be active even if none of its actions are active. Connect the Completed pin of the <b>Eliminate Targets</b> node to the new node.</p>
-										 	<span class="image main"><img  width = 100% src="/Docs/images/FirstQuestCompleteSequenceStep.png" alt="" /></span>
-										</li>
-										<li><p>We want this quest to activate automatically. So go to the details panel and set <strong>Auto Activate</strong> to true.</p>
-											<span class="image main"><img  width = 100% src="/Docs/images/FirstQuestSetAutoActivateStep.png" alt="" /></span>
+										<li>
+											<p>Make changes to the first quest graph as shown below. We will activate the referenced action once the spawned actor has been destroyed and then once the referenced action completes, we will print a string saying <strong>"Referenced Action Finished"</strong> to know it has completed.</p>
+											<span class="image main"><img  width = 100% src="/Docs/images/ReferencedActionTesting.png" alt="" /></span>
 										</li>
 									</ol>
 									<p>
-										That's it! The quest has been scripted.
+										Play the quest to see the references action in work. Since the <strong>AS_ReferencedAction</strong> asset is the one being executed, and not a local copy inside the main quest asset, you can open the <strong>AS_ReferencedAction</strong> asset to see the progress of the quest as shown in the video below.
 									</p>
-
-									<hr class="major" />
-
-									<h2>Playing the quest</h2>
-									<p>
-										To play the quest, we need to load the quest asset. The best place to load assets might be different for each game, but for this example we will load quests from the level Blueprint. Open the level blueprint and override the function <strong>Event BeginPlay</strong>.
-										Right click on the graph and search for a reference to the Quest Subsystem and call <strong>Load Quest Assets</strong> on the Quest Subsystem. It takes an <strong>FDirectoryPath</strong> argument. Create a variable and set its value to the directory where your quests are stored. In this example, quests are stored in <strong>/Game/Quests</strong>.
-									</p>
-									<span class="image main"><img  width = 100% src="/Docs/images/FirstQuestLoadQuests.png" alt="" /></span>
-									<p>
-										Hit play in the editor to start a PIE session. The quests will load and will be automatically activated and you can play it. Go to the first Trigger volume, watch the "Enemy" get spawned, shoot it to destroy it and the quest should end. The Quest asset's editor can be used to track this.
-									</p>
-									<video width = 100% controls>
-										<source src="/Docs/videos/FirstQuestVideo.mp4" type="video/mp4">
+									<video width = 100% controls></video>
+										<source src="/Docs/videos/ReferencedActionDemo.mp4" type="video/mp4">
 									</video>
-									<p>
-										You have your first quest!
-									</p>
 
+									<hr class="major" />
+
+									<h2>Asset instances</h2>
+									<p>
+										Adding asset instances is similar to adding asset references, except choose <strong>Asset Instance</strong> after dropping the asset on the graph. This will create a local copy of the asset inside the graph the asset was dropped in. Double click the instance node to open the sub graph.
+									</p>
+									<p>
+										It is possible to edit the sub graph but we recommend you only edit the properties marked with <strong>PreserveDuringAssetInstanceReplacement</strong> metadata as these will be preserved when you make changes the source asset and apply changes to copies.
+									</p>
+									<p>
+										After you have created an instance of an action asset and saved the asset with the copy, you will find a <strong>Refresh Instances</strong> button on the source asset's toolbar. After you make changes to the source asset, press this button to refresh all copies of this asset.
+									</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/Refresh instances button.png" alt="" /></span>
+									<p>
+										Right click on an asset instance node to get the node context menu. You will find an asset instance section with two options. Selecting <strong>Open Asset Instance Template</strong> will open the source asset's editor. Selecting <strong>Release Asset Instance</strong> will cause this instance to no longer be treated as a copy of the source asset. Refreshing the source asset will have no effect on this instance anymore.
+									</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/AssetInstanceNodeOpeions.png" alt="" /></span>
+									<p>
+										Both asset instances and asset references will not allow cyclic dependancies. Action A cannot have an instance of Action A. If Action A has an instance of Action B, Action B cannot have an instance of Action A.
+									</p>
+									
 								</section>
 
 						</div>

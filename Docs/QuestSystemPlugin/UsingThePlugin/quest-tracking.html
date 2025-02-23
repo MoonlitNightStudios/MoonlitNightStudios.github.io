@@ -80,6 +80,10 @@
 											<p>Add the quest widget to the viewport. Compile the blueprint.</p>
 											<span class="image main"><img  width = 100% src="/Docs/images/QuestWidgetAddToViewport.png" alt="" /></span>
 										</li>
+										<li>
+											<P>When quests are loaded from the archive during game mode's begin play event, the asynchronous loading takes a while to complete and the quest widget is created before quests are loaded. To fix this, bind a custom event to <strong>OnQuestsLoaded</strong> event of the Quest Subsystem. On the custom event call <strong>SetTrackedQuest</strong> with the first available quest as the tracked quest.</P>
+											<span class="image main"><img width = 100% src="/Docs/images/QuestWidgetUpdateOnQuestsLoaded.png" alt="" /></span>
+										</li>
 									</ol>
 									<p>Play the game and the quest should be visible on the screen.</p>
 

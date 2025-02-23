@@ -43,8 +43,8 @@ class Sidebar extends HTMLElement {
 														<li>
 															<span class="opener">Advanced</span>
 															<ul>
-																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/nested-action-sequences.html">Nested action sequences</a></li>
-																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/exposing-pins-to-outer-graph.html">Exposing pins to outer graphs</a></li>
+																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/events-triggers.html">Events and Triggers</a></li>
+																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/subgraphs.html">Subgraphs</a></li>
 																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/asset-instances-references.html">Asset instances and Asset references</a></li>
 															</ul>
 														</li>

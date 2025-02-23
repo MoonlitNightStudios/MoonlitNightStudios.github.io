@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Subgraphs | QuestSystemPlugin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<header-component></header-component>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Subgraphs</h1>
+									</header>
+
+									<span class="image main"><img  width = 100% src="/Docs/images/pic11.jpg" alt="" /></span>
+
+									<p>Action sequences are also actions. So it is possible to add an action sequence node to an action sequence asset's graph. The action sequence node's graph will be a sub graph of the main asset. Double click the action sequence node to view the subgraph.</p>
+									<p>
+										You can navigate back to the parent graph from the graph title bar. Set the action sequence node's <strong>In Editor Name</strong> and it will replace the default name on the title bar.
+									</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/Subgraph.png" alt="" /></span>
+									<p>
+										Subgraphs can make it easy to block quest segments inside an asset. It is also useful when using events and triggers. All triggers inside a subgraph will be activated when the main graph is initialised. so it is possible to activate a subgraph using triggers and not have it managed by the main graph. Events inside a subgraph will not be active if the subgraph action seqeunce is not active, even if the main graph is active. This can help make sure events fire only under certain circumstances.
+									</p>
+
+									<hr class="major" />
+
+									<h2>Exposing pins to outer</h2>
+									<p>
+										You can expose pins from a subgraph to an outer graph. To do this, add an <strong> Expose Pin To Outer</strong> node. This node has a single wildcard pin that will take the type of the pin it is connected to.
+									</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/SubgraphExposePin.png" alt="" /></span>
+									<p>
+										Refresh the action sequence node in the parent graph to get the new exposed pins.
+									</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/subgraphExposedPin.png" alt="" /></span>
+
+								</section>
+
+						</div>
+					</div>
+
+				<sidebar-component></sidebar-component>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/header.js"></script>
+			<script src="../../assets/js/sidebar.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
