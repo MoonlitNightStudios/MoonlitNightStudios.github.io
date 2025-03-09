@@ -46,6 +46,7 @@ class Sidebar extends HTMLElement {
 																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/events-triggers.html">Events and Triggers</a></li>
 																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/subgraphs.html">Subgraphs</a></li>
 																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/asset-instances-references.html">Asset instances and Asset references</a></li>
+																<li><a href="/Docs/QuestSystemPlugin/UsingThePlugin/dialogue-scenes.html">Dialogue scenes</a></li>
 															</ul>
 														</li>
 													</ul>

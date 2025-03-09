@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Dialogue Scenes | QuestSystemPlugin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<header-component></header-component>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Dialogue Scenes</h1>
+									</header>
+
+									<span class="image main"><img  width = 100% src="/Docs/images/pic11.jpg" alt="" /></span>
+
+									<p>Dialogue scenes can be used to create cinematic dialogues. To create a scene, add a dialogue scene entity to the dialogue graph and double click the node.</p>
+									<span class="image main"><img  width = 100% src="/Docs/images/DialogueSceneTrack.png" alt="" /></span>
+									<p>
+										It should open a level sequence editor. This level sequence editor is similar to the usual level sequence editor except this provides support for a new type of scene track called <strong>Dialogue Track</strong>. The dialogue track can support the following section types:
+									</p>
+									<ul>
+										<li>
+											<p><strong>DialoguePieceSceneSection:</strong> This can be used to play a dialogue piece during a scene.</p>
+										</li>
+										<li>
+											<p><strong>DialoguePlayerChoiceSceneSection:</strong> This can be used to provide choices to a player during a scene. These will always have a duration assigned to them depending on the duration of the section on the timeline.</p>
+										</li>
+										<li>
+											<p><strong>DialogueEventsSection:</strong> This track takes keyframes that will fire corresponding pins on the dialogue scene entity entity node.</p>
+										</li>
+									</ul>
+									
+								</section>
+
+						</div>
+					</div>
+
+				<sidebar-component></sidebar-component>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/header.js"></script>
+			<script src="../../assets/js/sidebar.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
