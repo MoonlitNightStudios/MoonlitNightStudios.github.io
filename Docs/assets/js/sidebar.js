@@ -28,7 +28,7 @@ class Sidebar extends HTMLElement {
 											<span class="opener">Quest System Plugin</span>
 											<ul>
 												<li><a href="/Docs/QuestSystemPlugin/getting-started.html">Getting started</a></li>
-												<li><a href="/Docs/QuestSystemPlugin/architecture.html">Architecture</a></li>
+												<!--li><a href="/Docs/QuestSystemPlugin/architecture.html">Architecture</a></li-->
 												<li>
 													<span class="opener">Using the Plugin</span>
 													<ul>
