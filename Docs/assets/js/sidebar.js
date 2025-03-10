@@ -23,7 +23,6 @@ class Sidebar extends HTMLElement {
 									</header>
 									<ul>
 										<li><a href="/Docs/index.html">Homepage</a></li>
-										<li><a href="/Docs/elements.html">Elements</a></li>
 										<li>
 											<span class="opener">Quest System Plugin</span>
 											<ul>
@@ -78,7 +77,7 @@ class Sidebar extends HTMLElement {
 									</header>
 									<div class="mini-posts">
 										<article>
-											<a href="#" class="image"><img src="/Docs/images/pic07.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="/images/Plugins/QuestSystem.png" alt="" /></a>
 											<p>Quest System Plugin - Coming soon!</p>
 										</article>
 									</div>
