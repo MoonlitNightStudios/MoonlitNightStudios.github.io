@@ -77,8 +77,8 @@ class Sidebar extends HTMLElement {
 									</header>
 									<div class="mini-posts">
 										<article>
-											<a href="#" class="image"><img src="/images/Plugins/QuestSystem.png" alt="" /></a>
-											<p>Quest System Plugin - Coming soon!</p>
+											<a href="https://www.fab.com/listings/e0208c24-8a1d-40ed-9bf6-dda679152940" target="_blank" class="image"><img src="/images/Plugins/QuestSystem.png" alt="" /></a>
+											<p>Quest System Plugin - Available on Fab.</p>
 										</article>
 									</div>
 								</section>
