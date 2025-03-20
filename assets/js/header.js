@@ -18,6 +18,12 @@ class Header extends HTMLElement {
 									<li><a href="/Plugins/quest-system.html">Quest System</a></li>
 								</ul>
 							</li>
+							<li>
+								<a href="#">Team</a>
+								<ul>
+									<li><a href="/Teams/Srinath/index.html">Srinath</a></li>
+								</ul>
+							</li>
 							<li><a href="/Docs/index.html">Docs</a></li>
 						</ul>
 					</nav>

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="icon" href="/images/Logo_Large.jpg">
+		<title>Srinath</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<header-component></header-component>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>Srinath Sourirajan</h2>
+							<p><a class="icon solid fa-gamepad"><span> Game Projects</span></a></p>
+						</header>
+						<span class="image"><img src="/images/Team/Srinath.jpg" alt="" /></span>
+					</div>
+					<a href="#quest-system" class="goto-next scrolly">Next</a>
+				</section>
+				
+			<!-- Quest System -->
+			<section id="quest-system" class="spotlight style3 left">
+				<span class="image fit main bottom"><img src="/images/Logo_WithBackground.jpg" alt="" /></span>
+				<div class="content">
+					<header>
+						<h2>Quest and Dialogue System plugin</h2>
+						<p>
+							I started working on this as a learning project and then kept adding features as a hobby. This showed promise so I polished it and published it on the <a href="https://www.fab.com/listings/e0208c24-8a1d-40ed-9bf6-dda679152940" target="_blank">Fab marketplace</a>!
+						</p>
+					</header>
+					<p>
+						Published under the name Moonlit Night Studios. Read more about the plugin <a href="https://moonlitnightstudios.com/Plugins/quest-system.html" target="_blank">here</a>
+					</p>
+					<p>
+						This plugin provides <b>tools</b> for <b>scripting</b> quests and dialogues in a graph editor, <b>debugging tools</b> in editor, Editor-only cheats for testing, and a <b>framework</b> and <b>workflow</b> for creating and managing quests in Unreal Engine. It is also <b>modular</b> and easily extensible in C++ and blueprints so can be tailored to suit any project.
+					</p>
+				</div>
+				<a href="#mythic-launcher" class="goto-next scrolly">Next</a>
+			</section>
+
+			<!-- Mythic Launcher -->
+				<section id="mythic-launcher" class="spotlight style3 right">
+					<span class="image fit main bottom"><img src="/images/Team/Projects/MythicLauncher.png" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Mythic Launcher</h2>
+							<p>
+								Game launcher
+							</p>
+						</header>
+						<p>
+							Wrote a simple game launcher using <b>WPF</b> in <b>c#</b> using <b>.Net core 8</b>. This was a simple project to learn how to develop .net applications in WPF. This launcher searches for Unreal Engine projects in a directory and provides buttons to choose the game to launch.
+						</p>
+						<p>
+							Additionally, this launcher can download game files hosted on Google drive. It can check for updates using a version value provided in a version file and can download a new version of the game files when the version on Google Drive changes.
+						</p>
+					</div>
+					<a href="#generative-ai-dialogues" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Generative AI dialogues -->
+				<section id="generative-ai-dialogues" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="/images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Runtime NPC dialogue generation
+							</h2>
+							<p>
+								Using generative AI
+							</p>
+						</header>
+						<p>
+							Used <b>ConvAI</b> and <b>InWorld</b> to generate dialogues for NPC at runtime. The project uses ConvAI API and InWorld API to query the respective servers to generate dialogues for NPCs in Unreal Engine, given a context.
+						</p>
+						<p>
+							Context in this case can be a predefined <b>world state</b> (like a crime scene with theft or murder, etc) and player questions to an NPC such as <b i>“Hello, I am the investigator investigating this crime scene. Can you tell me what you saw?”</b i>. A voice component listens to the microphone, converts player's speech to text and then sends it to the Servers to be processed. The servers then generate a reply and send it to the game client, speech is synthesised from that text, which will be played as an audio in game.
+						</p>
+					</div>
+					<a href="#parkour" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Parkour -->
+				<section id="parkour" class="spotlight style3 right">
+					<span class="image fit main bottom"><img src="/images/pic04.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Parkour movement system for characters
+							</h2>
+						</header>
+						<p>
+							Built a parkour movement system in Unreal Engine that is capable of <b>sprinting</b>, <b>climbing walls</b>, <b>hanging from ledges</b>, <b>shimmying left and right</b>, <b>jumping across gaps</b>, and <b>wall running</b>. Animation assets were taken from Mixamo and were retargeted to Unreal Engine’s Mannequin.
+						</p>
+						<p>
+							Improved upon the project by using <b>Inverse Kinematics</b> in the animation blueprint to make sure the bones on the character model are placed perfectly on the surface of a ledge when shimmying up or down a slanted ledge. This also limited hand position to the edge of the ledge so the hands are not extending beyond the end of the wall.
+						</p>
+					</div>
+				</section>
+
+			<footer-component></footer-component>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/header.js" ></script>
+			<script src="/assets/js/footer.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
