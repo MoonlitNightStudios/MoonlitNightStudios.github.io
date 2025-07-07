@@ -11,7 +11,13 @@ class Header extends HTMLElement {
 					<nav id="nav">
 						<ul>
 							<li><a href="/index.html">Home</a></li>
-							<li><a href="/Games/index.html">Games</a></li>
+							<li>
+								<a href="/Games/index.html">Games</a>
+								<ul>
+									<li><a href="/Games/tyrant.html">Project Tyrant</a></li>
+									<!--li><a href="/Games/watcher.html">Project Watcher</a></li-->
+								</ul>
+							</li>
 							<li>
 								<a href="#">UE Plugins</a>
 								<ul>
