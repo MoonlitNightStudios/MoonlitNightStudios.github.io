@@ -42,11 +42,28 @@
 						This plugin provides <b>tools</b> for <b>scripting</b> quests and dialogues in a graph editor, <b>debugging tools</b> in editor, Editor-only cheats for testing, and a <b>framework</b> and <b>workflow</b> for creating and managing quests in Unreal Engine. It is also <b>modular</b> and easily extensible in C++ and blueprints so can be tailored to suit any project.
 					</p>
 				</div>
+				<a href="#studio-projects" class="goto-next scrolly">Next</a>
+			</section>
+
+			<!-- Studio projects -->
+			<section id="studio-projects" class="spotlight style3 right">
+				<span class="image fit main bottom"><img src="/images/MoonlitNightBackground1.png" alt="" /></span>
+				<div class="content">
+					<header>
+						<h2>Studio Projects</h2>
+						<p>
+							Moonlit Night Studios is working on a few video game projects.
+						</p>
+					</header>
+					<p>
+						Find all our projects <a href="/Games/index.html">here</a>
+					</p>
+				</div>
 				<a href="#mythic-launcher" class="goto-next scrolly">Next</a>
 			</section>
 
 			<!-- Mythic Launcher -->
-				<section id="mythic-launcher" class="spotlight style3 right">
+				<section id="mythic-launcher" class="spotlight style3 left">
 					<span class="image fit main bottom"><img src="/images/Team/Projects/MythicLauncher.png" alt="" /></span>
 					<div class="content">
 						<header>
@@ -66,8 +83,8 @@
 				</section>
 
 			<!-- Generative AI dialogues -->
-				<section id="generative-ai-dialogues" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="/images/pic04.jpg" alt="" /></span>
+				<section id="generative-ai-dialogues" class="spotlight style3 right">
+					<span class="image fit main bottom"><img src="/images/MoonlitNightBackground1.png" alt="" /></span>
 					<div class="content">
 						<header>
 							<h2>Runtime NPC dialogue generation
@@ -80,15 +97,15 @@
 							Used <b>ConvAI</b> and <b>InWorld</b> to generate dialogues for NPC at runtime. The project uses ConvAI API and InWorld API to query the respective servers to generate dialogues for NPCs in Unreal Engine, given a context.
 						</p>
 						<p>
-							Context in this case can be a predefined <b>world state</b> (like a crime scene with theft or murder, etc) and player questions to an NPC such as <b i>“Hello, I am the investigator investigating this crime scene. Can you tell me what you saw?”</b i>. A voice component listens to the microphone, converts player's speech to text and then sends it to the Servers to be processed. The servers then generate a reply and send it to the game client, speech is synthesised from that text, which will be played as an audio in game.
+							Context in this case can be a predefined <b>world state</b> (like a crime scene with theft or murder, etc) and player questions to an NPC. A voice component listens to the microphone, converts player's speech to text and then sends it to the Servers to be processed. The servers then generate a reply and send it to the game client, speech is synthesised from that text, which will be played as an audio in game.
 						</p>
 					</div>
 					<a href="#parkour" class="goto-next scrolly">Next</a>
 				</section>
 
 			<!-- Parkour -->
-				<section id="parkour" class="spotlight style3 right">
-					<span class="image fit main bottom"><img src="/images/pic04.jpg" alt="" /></span>
+				<section id="parkour" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="/images/MoonlitNightBackground3.png" alt="" /></span>
 					<div class="content">
 						<header>
 							<h2>Parkour movement system for characters
@@ -99,6 +116,30 @@
 						</p>
 						<p>
 							Improved upon the project by using <b>Inverse Kinematics</b> in the animation blueprint to make sure the bones on the character model are placed perfectly on the surface of a ledge when shimmying up or down a slanted ledge. This also limited hand position to the edge of the ledge so the hands are not extending beyond the end of the wall.
+						</p>
+					</div>
+					<a href="#parkourv1" class="goto-next scrolly">Next</a>
+				</section>
+
+				<!-- Parkour V1 -->
+				<section id="parkourv1" class="spotlight style3 right">
+					<span class="image fit main bottom"><img src="/images/MoonlitNightBackground3.png" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Parkour movement system V1
+							</h2>
+						</header>
+						<p>
+							I couldn't find version 2 of the project (the one mentioned above) but had version 1 on my github.
+							It was built in UE4.24 (Archaic!) and features climbing, wall running, shimmying and rope swinging. We called this project <b>Unknown</b>. A few animations are broken but it works for the most part.
+						</p>
+						<p>
+							You can download a build for windows <a href="https://drive.google.com/file/d/1QkV72njsoZ680Igz4EzcGe7LbBvrlecq/view?usp=sharing" target="_blank">here</a>.
+						</p>
+						<p>
+							Press shift or Right Trigger to start sprinting. Face a wall while sprinting to start wall running.
+							Interact with objects with X on the controller or E on keyboard.
+							Press space or A on controller to jump.
 						</p>
 					</div>
 				</section>
