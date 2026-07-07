@@ -15,6 +15,7 @@ class Header extends HTMLElement {
 								<a href="/Games/index.html">Games</a>
 								<ul>
 									<li><a href="/Games/tyrant.html">Project Tyrant</a></li>
+									<li><a href="/Games/dice-roll.html">Project DiceRoll</a></li>
 									<!--li><a href="/Games/watcher.html">Project Watcher</a></li-->
 								</ul>
 							</li>
